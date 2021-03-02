@@ -1,14 +1,35 @@
-import Head from "next/head";
+import Layout from "../components/Layout";
+import { getEventData } from "../lib/graphql";
 
 const Home: React.FC = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <Head>
-        <title>Music Live</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>Search Music Live</main>
-    </div>
+    <>
+      <Layout title="Home">
+        <div className="my-16">
+          <div className="my-8">
+            <h2 className="text-center capitalize">about this page</h2>
+            <p className="my-4">you can search live information</p>
+          </div>
+          <div className="">
+            <img src="/assets/images/music-live-02.jpg" alt="listener" />
+          </div>
+        </div>
+        <div className="my-16">
+          <div className="my-8">
+            <h2 className="text-center capitalize">music live</h2>
+            <p className="my-4">you can search live information</p>
+            <button className="btn">Search</button>
+          </div>
+          <div className="">
+            <img
+              src="/assets/images/music-live-03.jpg"
+              alt="livehouse"
+              onClick={getEventData}
+            />
+          </div>
+        </div>
+      </Layout>
+    </>
   );
 };
 
