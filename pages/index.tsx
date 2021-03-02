@@ -1,4 +1,5 @@
 import Layout from "../components/Layout";
+import { getEventData } from "../lib/graphql";
 
 const Home: React.FC = () => {
   return (
@@ -20,7 +21,11 @@ const Home: React.FC = () => {
             <button className="btn">Search</button>
           </div>
           <div className="">
-            <img src="/assets/images/music-live-03.jpg" alt="livehouse" />
+            <img
+              src="/assets/images/music-live-03.jpg"
+              alt="livehouse"
+              onClick={getEventData}
+            />
           </div>
         </div>
       </Layout>
