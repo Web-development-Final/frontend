@@ -1,9 +1,14 @@
 import Navbar from "./Navbar";
 
-const Header: React.FC = () => {
+interface HeaderTitle {
+  title: string;
+}
+
+const Header: React.FC<HeaderTitle> = ({ title }) => {
+  const isHome = title === "Home" ? true : false;
   return (
-    <header className="h-screen bg-header-image bg-center bg-cover">
-      <Navbar />
+    <header className={isHome && "h-screen bg-header-image bg-center bg-cover"}>
+      <Navbar isHome={isHome} />
     </header>
   );
 };

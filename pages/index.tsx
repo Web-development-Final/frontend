@@ -6,7 +6,7 @@ const Home: React.FC = () => {
     <>
       <Layout title="Home">
         <div className="my-16">
-          <div className="my-8">
+          <div className="my-8 text-center">
             <h2 className="text-center capitalize">about this page</h2>
             <p className="my-4">you can search live information</p>
           </div>
@@ -15,10 +15,12 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div className="my-16">
-          <div className="my-8">
-            <h2 className="text-center capitalize">music live</h2>
+          <div className="my-8 text-center">
+            <h2 className="capitalize">music live</h2>
             <p className="my-4">you can search live information</p>
-            <button className="btn">Search</button>
+            <button className="btn px-6 py-2 bg-secondary text-secondary hover:bg-white hover:text-primary focus:outline-none">
+              Search
+            </button>
           </div>
           <div className="">
             <img

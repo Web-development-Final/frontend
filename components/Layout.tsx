@@ -1,18 +1,19 @@
 import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 
-interface TITLE {
+interface Title {
   title: string;
 }
 
-const Layout: React.FC<TITLE> = ({ children, title = "None Title" }) => {
+const Layout: React.FC<Title> = ({ children, title = "None Title" }) => {
   return (
-    <div>
+    <div className="font-primary bg-primary text-primary">
       <Head>
         <title>{title}</title>
       </Head>
-      <Header />
+      <Header title={title} />
       <main>{children}</main>
       <Footer />
     </div>

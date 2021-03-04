@@ -1,8 +1,8 @@
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
-const URI = "http://127.0.0.1:54855/graphql/";
+const URI = "http://127.0.0.1:8000/graphql/";
 
-export async function getEventData() {
+export const getEventData = async () => {
   const client = new ApolloClient({
     uri: URI,
     cache: new InMemoryCache(),
@@ -17,15 +17,15 @@ export async function getEventData() {
     }
   `;
 
-  client
+  const resEventsData = client
     .query({
       query,
     })
-    .then((result) => console.log(result.data));
+    .then((result) => result);
 
   return {
     props: {
-      key: "I am apollo",
+      resEventsData,
     },
   };
-}
+};

@@ -1,22 +1,33 @@
+import Link from "next/link";
 import { useState } from "react";
 
-const Navbar: React.FC = () => {
+interface HasHome {
+  isHome: boolean;
+}
+
+const Navbar: React.FC<HasHome> = ({ isHome }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [modal, setModal] = useState(false);
   return (
-    <div className="flex justify-center items-center h-screen flex-wrap">
+    <div
+      className={
+        "flex justify-center items-centerflex-wrap" + (isHome && "h-screen")
+      }
+    >
       {modal && (
         <div
-          className="h-screen w-full fixed z-10 bg-gray-400"
+          className="h-screen w-full fixed z-10 bg-secondary opacity-80"
           onClick={() => {
             setIsClicked(!isClicked);
             setModal(!modal);
           }}
         />
       )}
-      <nav className="navbar fixed top-0 left-0 z-20 sm:flex sm:justify-between sm:items-center">
-        <div className="flex justify-between items-center h-full">
-          <div>logo</div>
+      <nav className="navbar fixed top-0 left-0 z-20 bg-primary border-b border-secondary border-opacity-25 sm:flex sm:justify-between sm:items-center">
+        <div className="flex justify-between items-center h-full px-10">
+          <Link href="/">
+            <a className="cursor-pointer uppercase">logo</a>
+          </Link>
           <div className="">
             <div
               className="cursor-pointer sm:hidden"
@@ -49,16 +60,18 @@ const Navbar: React.FC = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="bg-primary px-10">
           <ul
             className={
               (isClicked ? "block " : "hidden ") +
               "sm:flex sm:justify-center sm:items-center"
             }
           >
-            <li className="cursor-pointer">link-1</li>
-            <li>link-2</li>
-            <li>link-3</li>
+            <Link href="/event">
+              <a className="cursor-pointer capitalize">search music live</a>
+            </Link>
+            <li className="cursor-pointer sm:mx-4">link-2</li>
+            <li className="cursor-pointer">link-3</li>
           </ul>
         </div>
       </nav>
