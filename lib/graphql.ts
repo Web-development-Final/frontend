@@ -1,6 +1,7 @@
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
-const URI = "http://localhost:8000/graphql/";
+// const URI = "http://localhost:8000/graphql/";
+const URI = "https://music-live-2021.herokuapp.com/graphql/";
 
 export const getEventData = async () => {
   const client = new ApolloClient({
