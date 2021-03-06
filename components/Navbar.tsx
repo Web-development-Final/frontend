@@ -68,10 +68,10 @@ const Navbar: React.FC<HasHome> = ({ isHome }) => {
             }
           >
             <Link href="/event">
-              <a className="cursor-pointer capitalize">search music live</a>
+              <a className="cursor-pointer capitalize">good music live</a>
             </Link>
-            <li className="cursor-pointer sm:mx-4">link-2</li>
-            <li className="cursor-pointer">link-3</li>
+            {/* <li className="cursor-pointer sm:mx-4">link-2</li>
+            <li className="cursor-pointer">link-3</li> */}
           </ul>
         </div>
       </nav>

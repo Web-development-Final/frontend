@@ -20,7 +20,7 @@ const EventForm = () => {
               <input
                 type="email"
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                placeholder="john@example.com"
+                placeholder="music-live@example.com"
               />
             </label>
             <label className="block">
@@ -33,10 +33,10 @@ const EventForm = () => {
             <label className="block">
               <span className="text-gray-700">What type of event is it?</span>
               <select className="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                <option>Corporate event</option>
-                <option>Wedding</option>
-                <option>Birthday</option>
-                <option>Other</option>
+                <option>Music event</option>
+                <option>Rock</option>
+                <option>Pop</option>
+                <option>Jazz</option>
               </select>
             </label>
             <label className="block">
